@@ -1,7 +1,3 @@
-uniform float u_time;
-uniform float u_width;
-uniform float u_heigth;
-
 vec4 frag(vec2 pos, vec2 uv, vec4 color, sampler2D tex) {
 	vec2 center = vec2(0.5, 0.5);
 	vec2 off_center = uv - center;

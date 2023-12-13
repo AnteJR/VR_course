@@ -61,10 +61,12 @@ const level = addLevel([
     }
 });
 
-loadShaderURL("test", null, "/shaders/first_try.frag");
-loadShaderURL("test2", null, "/shaders/oldPhoneScreen.frag");
-loadShaderURL("test3", null, "/shaders/blackAndWhite.frag");
+loadShaderURL("test", null, "/shaders/baseEffect.frag");
+loadShaderURL("test2", null, "/shaders/colourTest.frag");
+loadShaderURL("test3", null, "/shaders/blackAndWhiteTest.frag");
 loadShaderURL("test4", null, "/shaders/improvedCRT.frag");
 
+// usePostEffect("test");
+// usePostEffect("test2");
+// usePostEffect("test3");
 usePostEffect("test4", () => ({ "u_time": time(), "u_resy": height()}));
-// usePostEffect("test3", () => ({}));
