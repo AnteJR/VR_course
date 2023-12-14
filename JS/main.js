@@ -69,11 +69,5 @@ loadShaderURL("test4", null, "/shaders/baseEffect2.frag");
 loadShaderURL("test5", null, "/shaders/discolourTest.frag");
 loadShaderURL("final2", null, "/shaders/oldVHS.frag");
 
-
-// usePostEffect("test1");
-// usePostEffect("test2");
-// usePostEffect("test3");
 // usePostEffect("final1", () => ({ "u_time": time(), "u_resy": height()}));
-// usePostEffect("test4", () => ({ "u_intensity": 10 }));
-// usePostEffect("test5");
 usePostEffect("final2", () => ({ "u_time": time() }));
