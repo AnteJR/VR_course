@@ -61,12 +61,19 @@ const level = addLevel([
     }
 });
 
-loadShaderURL("test", null, "/shaders/baseEffect.frag");
+loadShaderURL("test1", null, "/shaders/baseEffect.frag");
 loadShaderURL("test2", null, "/shaders/colourTest.frag");
 loadShaderURL("test3", null, "/shaders/blackAndWhiteTest.frag");
-loadShaderURL("test4", null, "/shaders/improvedCRT.frag");
+loadShaderURL("final1", null, "/shaders/macintoshScreen.frag");
+loadShaderURL("test4", null, "/shaders/baseEffect2.frag");
+loadShaderURL("test5", null, "/shaders/discolourTest.frag");
+loadShaderURL("final2", null, "/shaders/oldVHS.frag");
 
-// usePostEffect("test");
+
+// usePostEffect("test1");
 // usePostEffect("test2");
 // usePostEffect("test3");
-usePostEffect("test4", () => ({ "u_time": time(), "u_resy": height()}));
+// usePostEffect("final1", () => ({ "u_time": time(), "u_resy": height()}));
+// usePostEffect("test4", () => ({ "u_intensity": 10 }));
+// usePostEffect("test5");
+usePostEffect("final2", () => ({ "u_time": time() }));

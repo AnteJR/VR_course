@@ -13,8 +13,8 @@ vec4 frag(vec2 pos, vec2 uv, vec4 color, sampler2D tex) {
 
     vec4 c = vec4(texture2D(tex, uv2).rgb, 1.0);
 
-    float count = u_resy / 7.5;
-    float lines = fract((uv2.y + (u_time * 0.01)) * count);
+    float count = u_resy / 4.;
+    float lines = fract((uv2.y + (u_time * 0.005)) * count);
     lines = min(1.0, 0.8 + 0.5 * min(lines, 1.0 - lines));
     c.rgb *= lines;
 
