@@ -3,4 +3,4 @@ Project for a course about VR. I'm getting my hands on shaders. If all else fail
 
 Press space to switch between the shaders.
 
-Available on GitHub Pages [here](https://antejr.github.io/VR_course/).
+Available on GitHub Pages [here](https://antejr.github.io/VR_course/). (not working for now, not sure why though)
