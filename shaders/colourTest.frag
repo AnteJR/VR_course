@@ -1,6 +1,4 @@
-uniform float u_time;
-uniform float u_width;
-uniform float u_heigth;
+// orange tint like an old Siemens phone
 
 vec4 frag(vec2 pos, vec2 uv, vec4 color, sampler2D tex) {
     vec4 c = def_frag();

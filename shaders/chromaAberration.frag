@@ -1,4 +1,5 @@
-uniform float u_time;
+// static chromatic aberration
+
 uniform float u_amount;
 
 // function to generate random value between 0 and 1

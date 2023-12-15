@@ -1,4 +1,10 @@
-// partly based on the work of Drudgerist https://www.shadertoy.com/view/fdBfRw
+// inspired and helped by the work of Drudgerist https://www.shadertoy.com/view/fdBfRw
+// upgraded version of the VHS effect designed by the Kaboom JS team
+// is developped in steps :
+//      1. deform the screen and trim the edges
+//      2. apply directional, animated blur to the screen
+//      3. discolour the blurred image
+//      4. add scanlines
 
 uniform float u_time;
 

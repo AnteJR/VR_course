@@ -1,3 +1,5 @@
+// Macintosh screen simulator (deformation, black and white and scan lines)
+
 uniform float u_time;
 uniform float u_resy;
 

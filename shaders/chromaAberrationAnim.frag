@@ -1,3 +1,5 @@
+// animated chromatic aberration wave (left to right)
+
 uniform float u_time;
 uniform float u_amount;
 

@@ -1,3 +1,5 @@
+// animated noise / snow
+
 uniform float u_time;
 
 // function to generate random value between 0 and 1

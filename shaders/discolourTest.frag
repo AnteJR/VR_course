@@ -1,3 +1,5 @@
+// discoloration by boosting the other R, B or G values (for example boosting R and B if G is higher)
+
 vec4 frag(vec2 pos, vec2 uv, vec4 color, sampler2D tex) {
     vec4 c = def_frag();
     if (c.x >= c.y && c.x >= c.z) {
