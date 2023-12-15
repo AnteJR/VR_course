@@ -5,6 +5,10 @@ kaboom({
     scale: 10
 });
 
+/*------------------------------
+            LEVEL
+------------------------------*/
+
 loadSpriteAtlas("/assets/textures_test.png", {
     "dirt": {
         x: 0,
@@ -61,17 +65,56 @@ const level = addLevel([
     }
 });
 
-// loadShaderURL("test1", null, "/shaders/baseEffect.frag");
-// loadShaderURL("test2", null, "/shaders/colourTest.frag");
-// loadShaderURL("test3", null, "/shaders/blackAndWhiteTest.frag");
-loadShaderURL("final1", null, "/shaders/macintoshScreen.frag");
-// loadShaderURL("test4", null, "/shaders/baseEffect2.frag");
-// loadShaderURL("test5", null, "/shaders/discolourTest.frag");
-loadShaderURL("final2", null, "/shaders/oldVHS.frag");
-// loadShaderURL("test6", null, "/shaders/noiseTest.frag");
-// loadShaderURL("test7", null, "/shaders/chromaAberration.frag");
-loadShaderURL("final3", null, "/shaders/chromaAberrationAnim.frag");
+/*------------------------------
+            SHADERS
+------------------------------*/
 
-// usePostEffect("final1", () => ({ "u_time": time(), "u_resy": height()}));
-// usePostEffect("final2", () => ({ "u_time": time() }));
-// usePostEffect("final3", () => ({ "u_time": time(), "u_amount": 4, }));
+loadShaderURL("Default", null, "/shaders/base.frag");
+loadShaderURL("KaboomJS_CRT", null, "/shaders/baseEffect.frag");
+loadShaderURL("Siemens_screen", null, "/shaders/colourTest.frag");
+loadShaderURL("Black_and_white", null, "/shaders/blackAndWhiteTest.frag");
+loadShaderURL("Old_Macintosh_screen", null, "/shaders/macintoshScreen.frag");         // final #1
+loadShaderURL("KaboomJS_VHS", null, "/shaders/baseEffect2.frag");
+loadShaderURL("Discoloration", null, "/shaders/discolourTest.frag");
+loadShaderURL("Old_VHS_on_CRT_screen", null, "/shaders/oldVHS.frag");                  // final #2
+loadShaderURL("Visual_noise", null, "/shaders/noiseTest.frag");
+loadShaderURL("Chroma_aberration", null, "/shaders/chromaAberration.frag");
+loadShaderURL("Chroma_aberration_wave", null, "/shaders/chromaAberrationAnim.frag");    // final #3
+
+const effects = {
+    Default: () => ({}),
+    KaboomJS_CRT: () => ({}),
+    Siemens_screen: () => ({}),
+    Black_and_white: () => ({}),
+    Old_Macintosh_screen: () => ({ "u_time": time(), "u_resy": height() }),
+    KaboomJS_VHS: () => ({ "u_intensity": 10 }),
+    Discoloration:() => ({}),
+    Old_VHS_on_CRT_screen: () => ({ "u_time": time(), "u_blurIntensity": 0.5 }),
+    Visual_noise: () => ({ "u_time": time() }),
+    Chroma_aberration: () => ({ "u_amount": 2 }),
+    Chroma_aberration_wave: () => ({ "u_time": time(), "u_amount": 4 }),
+}
+
+let currentEffect = 0;
+
+onKeyPress("space", () => {
+	const list = Object.keys(effects);
+	currentEffect = (currentEffect + 1) % list.length;
+	label.text = list[currentEffect];
+});
+
+onUpdate(() => {
+	const effect = Object.keys(effects)[currentEffect];
+	usePostEffect(effect, effects[effect]());
+});
+
+/*------------------------------
+            TEXT
+------------------------------*/
+
+const label = add([
+	pos(8, 8),
+	text(Object.keys(effects)[currentEffect], {
+        size: 10
+    }),
+]);

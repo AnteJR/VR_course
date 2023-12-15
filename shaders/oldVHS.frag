@@ -7,6 +7,7 @@
 //      4. add scanlines
 
 uniform float u_time;
+uniform float u_blurIntensity;
 
 const int SampleCount = 64;
 float GlobalIntensity = 0.1;
@@ -21,7 +22,7 @@ vec4 directionalBlur(sampler2D samp, vec2 uv, vec2 direction, float intensity) {
 
         // blur intensity and application
         float intensBase = float(i) * intensity;
-        float intensNormalized = intensBase / float(SampleCount);
+        float intensNormalized = intensBase * u_blurIntensity / float(SampleCount);
         b += texture2D(samp, uv + (intensNormalized * direction * rand));
     }
 
