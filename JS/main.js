@@ -81,40 +81,43 @@ loadShaderURL("Visual_noise", null, "../shaders/noiseTest.frag");
 loadShaderURL("Chroma_aberration", null, "../shaders/chromaAberration.frag");
 loadShaderURL("Chroma_aberration_wave", null, "../shaders/chromaAberrationAnim.frag");    // final #3
 
-const effects = {
-    Default: () => ({}),
-    // KaboomJS_CRT: () => ({}),
-    Siemens_screen: () => ({}),
-    Black_and_white: () => ({}),
-    Old_Macintosh_screen: () => ({ "u_time": time(), "u_resy": height() }),
-    // KaboomJS_VHS: () => ({ "u_intensity": 10 }),
-    Discoloration:() => ({}),
-    Old_VHS_on_CRT_screen: () => ({ "u_time": time(), "u_blurIntensity": 0.5 }),
-    Visual_noise: () => ({ "u_time": time() }),
-    Chroma_aberration: () => ({ "u_amount": 2 }),
-    Chroma_aberration_wave: () => ({ "u_time": time(), "u_amount": 4 }),
-}
 
-let currentEffect = 0;
+setTimeout(() => {
+    const effects = {
+        Default: () => ({}),
+        // KaboomJS_CRT: () => ({}),
+        Siemens_screen: () => ({}),
+        Black_and_white: () => ({}),
+        Old_Macintosh_screen: () => ({ "u_time": time(), "u_resy": height() }),
+        // KaboomJS_VHS: () => ({ "u_intensity": 10 }),
+        Discoloration:() => ({}),
+        Old_VHS_on_CRT_screen: () => ({ "u_time": time(), "u_blurIntensity": 0.5 }),
+        Visual_noise: () => ({ "u_time": time() }),
+        Chroma_aberration: () => ({ "u_amount": 2 }),
+        Chroma_aberration_wave: () => ({ "u_time": time(), "u_amount": 4 }),
+    }
+    
+    let currentEffect = 0;
+    
+    onKeyPress("space", () => {
+        const list = Object.keys(effects);
+        currentEffect = (currentEffect + 1) % list.length;
+        label.text = list[currentEffect];
+    });
+    
+    onUpdate(() => {
+        const effect = Object.keys(effects)[currentEffect];
+        usePostEffect(effect, effects[effect]());
+    });
 
-onKeyPress("space", () => {
-	const list = Object.keys(effects);
-	currentEffect = (currentEffect + 1) % list.length;
-	label.text = list[currentEffect];
-});
-
-onUpdate(() => {
-	const effect = Object.keys(effects)[currentEffect];
-	usePostEffect(effect, effects[effect]());
-});
-
-/*------------------------------
+    /*------------------------------
             TEXT
-------------------------------*/
+    ------------------------------*/
 
-const label = add([
-	pos(8, 8),
-	text(Object.keys(effects)[currentEffect], {
-        size: 10
-    }),
-]);
+    const label = add([
+        pos(8, 8),
+        text(Object.keys(effects)[currentEffect], {
+            size: 10
+        }),
+    ]);
+}, 2000);
