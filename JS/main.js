@@ -69,17 +69,17 @@ const level = addLevel([
             SHADERS
 ------------------------------*/
 
-// loadShaderURL("KaboomJS_CRT", null, "/shaders/KaboomJS_shaders/CRT.frag");
-// loadShaderURL("KaboomJS_VHS", null, "/shaders/KaboomJS_shaders/VHS.frag");
-loadShaderURL("Default", null, "/shaders/base.frag");
-loadShaderURL("Siemens_screen", null, "/shaders/colourTest.frag");
-loadShaderURL("Black_and_white", null, "/shaders/blackAndWhiteTest.frag");
-loadShaderURL("Old_Macintosh_screen", null, "/shaders/macintoshScreen.frag");         // final #1
-loadShaderURL("Discoloration", null, "/shaders/discolourTest.frag");
-loadShaderURL("Old_VHS_on_CRT_screen", null, "/shaders/oldVHS.frag");                  // final #2
-loadShaderURL("Visual_noise", null, "/shaders/noiseTest.frag");
-loadShaderURL("Chroma_aberration", null, "/shaders/chromaAberration.frag");
-loadShaderURL("Chroma_aberration_wave", null, "/shaders/chromaAberrationAnim.frag");    // final #3
+// loadShaderURL("KaboomJS_CRT", null, "../shaders/KaboomJS_shaders/CRT.frag");
+// loadShaderURL("KaboomJS_VHS", null, "../shaders/KaboomJS_shaders/VHS.frag");
+loadShaderURL("Default", null, "../shaders/base.frag");
+loadShaderURL("Siemens_screen", null, "../shaders/colourTest.frag");
+loadShaderURL("Black_and_white", null, "../shaders/blackAndWhiteTest.frag");
+loadShaderURL("Old_Macintosh_screen", null, "../shaders/macintoshScreen.frag");         // final #1
+loadShaderURL("Discoloration", null, "../shaders/discolourTest.frag");
+loadShaderURL("Old_VHS_on_CRT_screen", null, "../shaders/oldVHS.frag");                  // final #2
+loadShaderURL("Visual_noise", null, "../shaders/noiseTest.frag");
+loadShaderURL("Chroma_aberration", null, "../shaders/chromaAberration.frag");
+loadShaderURL("Chroma_aberration_wave", null, "../shaders/chromaAberrationAnim.frag");    // final #3
 
 const effects = {
     Default: () => ({}),
