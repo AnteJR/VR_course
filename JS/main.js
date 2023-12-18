@@ -80,19 +80,25 @@ loadShaderURL("Old_VHS_on_CRT_screen", null, "/shaders/oldVHS.frag");           
 loadShaderURL("Visual_noise", null, "/shaders/noiseTest.frag");
 loadShaderURL("Chroma_aberration", null, "/shaders/chromaAberration.frag");
 loadShaderURL("Chroma_aberration_wave", null, "/shaders/chromaAberrationAnim.frag");    // final #3
+loadShaderURL("Contrast_booster", null, "/shaders/contrast.frag");
+loadShaderURL("Black_and_white_high_contrast", null, "/shaders/blackAndWhiteHighContrast.frag");
+loadShaderURL("Repeated_flash", null, "/shaders/flash.frag");
 
 const effects = {
-    Default: () => ({}),
     // KaboomJS_CRT: () => ({}),
+    // KaboomJS_VHS: () => ({ "u_intensity": 10 }),
+    Default: () => ({ }),
     Siemens_screen: () => ({}),
     Black_and_white: () => ({}),
     Old_Macintosh_screen: () => ({ "u_time": time(), "u_resy": height() }),
-    // KaboomJS_VHS: () => ({ "u_intensity": 10 }),
     Discoloration:() => ({}),
     Old_VHS_on_CRT_screen: () => ({ "u_time": time(), "u_blurIntensity": 0.5 }),
     Visual_noise: () => ({ "u_time": time() }),
     Chroma_aberration: () => ({ "u_amount": 2 }),
     Chroma_aberration_wave: () => ({ "u_time": time(), "u_amount": 4 }),
+    Contrast_booster: () => ({ "u_contrast": 1.25 }),
+    Black_and_white_high_contrast: () => ({ "u_contrast": 0.95 }),
+    Repeated_flash: () => ({ "u_time": time(), "u_flashLength": 0.5 }),
 }
 
 let currentEffect = 0;
