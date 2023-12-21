@@ -85,11 +85,12 @@ loadShaderURL("Contrast_booster", null, "/shaders/contrast.frag");
 loadShaderURL("Black_and_white_high_contrast", null, "/shaders/blackAndWhiteHighContrast.frag");
 loadShaderURL("Repeated_flash", null, "/shaders/flash.frag");
 loadShaderURL("Tutorial_shader_art", null, "/shaders/tutorialShaderArt.frag");
+loadShaderURL("Shader_Art_2", null, "/shaders/shaderArt2.frag");
 
 const effects = {
     // KaboomJS_CRT: () => ({}),
     // KaboomJS_VHS: () => ({ "u_intensity": 10 }),
-    Current_test: () => ({ }),
+    Current_test: () => ({ "u_time": time(), "u_width": width(), "u_height": height() }),
     Default: () => ({}),
     Siemens_screen: () => ({}),
     Black_and_white: () => ({}),
@@ -103,6 +104,7 @@ const effects = {
     Black_and_white_high_contrast: () => ({ "u_contrast": 0.95 }),
     Repeated_flash: () => ({ "u_time": time(), "u_flashLength": 0.5 }),
     Tutorial_shader_art: () => ({ "u_time": time(), "u_width": width(), "u_height": height() }),
+    Shader_Art_2: () => ({ "u_time": time(), "u_width": width(), "u_height": height() }),
 }
 
 let currentEffect = 0;
