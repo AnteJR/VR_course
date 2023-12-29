@@ -84,6 +84,7 @@ loadShaderURL("Chroma_aberration_wave", null, "/shaders/chromaAberrationAnim.fra
 loadShaderURL("Contrast_booster", null, "/shaders/contrast.frag");
 loadShaderURL("Black_and_white_high_contrast", null, "/shaders/blackAndWhiteHighContrast.frag");
 loadShaderURL("Repeated_flash", null, "/shaders/flash.frag");
+loadShaderURL("Pixel_sorting", null, "/shaders/pixelSorting.frag");
 loadShaderURL("Tutorial_shader_art", null, "/shaders/tutorialShaderArt.frag");
 loadShaderURL("Shader_Art_2", null, "/shaders/shaderArt2.frag");
 loadShaderURL("Shader_Art_3", null, "/shaders/shaderArt3.frag");
@@ -104,6 +105,7 @@ const effects = {
     Contrast_booster: () => ({ "u_contrast": 1.25 }),
     Black_and_white_high_contrast: () => ({ "u_contrast": 0.95 }),
     Repeated_flash: () => ({ "u_time": time(), "u_flashLength": 0.5 }),
+    Pixel_sorting: () => ({ "u_time": time(), "u_intensity": 0.01, "u_isAnimated": 1. }),
     Tutorial_shader_art: () => ({ "u_time": time(), "u_width": width(), "u_height": height() }),
     Shader_Art_2: () => ({ "u_time": time(), "u_width": width(), "u_height": height() }),
     Shader_Art_3: () => ({ "u_time": time(), "u_width": width(), "u_height": height() }),
