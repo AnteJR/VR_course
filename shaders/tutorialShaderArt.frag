@@ -1,4 +1,6 @@
-// base CRT shader from Kaboom JS
+// based on the tutorial by kishimisu
+// https://www.youtube.com/watch?v=f4s1h2YETNY&ab_channel=kishimisu
+// adapted to KaboomJS's shader language
 uniform float u_time;
 uniform float u_width;
 uniform float u_height;

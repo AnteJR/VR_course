@@ -86,6 +86,7 @@ loadShaderURL("Black_and_white_high_contrast", null, "/shaders/blackAndWhiteHigh
 loadShaderURL("Repeated_flash", null, "/shaders/flash.frag");
 loadShaderURL("Tutorial_shader_art", null, "/shaders/tutorialShaderArt.frag");
 loadShaderURL("Shader_Art_2", null, "/shaders/shaderArt2.frag");
+loadShaderURL("Shader_Art_3", null, "/shaders/shaderArt3.frag");
 
 const effects = {
     // KaboomJS_CRT: () => ({}),
@@ -105,6 +106,7 @@ const effects = {
     Repeated_flash: () => ({ "u_time": time(), "u_flashLength": 0.5 }),
     Tutorial_shader_art: () => ({ "u_time": time(), "u_width": width(), "u_height": height() }),
     Shader_Art_2: () => ({ "u_time": time(), "u_width": width(), "u_height": height() }),
+    Shader_Art_3: () => ({ "u_time": time(), "u_width": width(), "u_height": height() }),
 }
 
 let currentEffect = 0;

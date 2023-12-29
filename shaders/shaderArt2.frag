@@ -1,4 +1,4 @@
-// base CRT shader from Kaboom JS
+// shader Art #2
 uniform float u_time;
 uniform float u_width;
 uniform float u_height;
