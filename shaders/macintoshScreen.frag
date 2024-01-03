@@ -52,7 +52,7 @@ vec4 frag(vec2 pos, vec2 uv, vec4 color, sampler2D tex) {
     else if (c.x < 0.9 && c.y < 0.9 && c.z < 0.9) {
         return vec4(0.9, 0.9, 0.9, 1);
     }
-    else if (c.x < 1.0 && c.y < 1.0 && c.z < 1.0) {
+    else if (c.x <= 1.0 && c.y <= 1.0 && c.z <= 1.0) {
         return vec4(0.95, 0.95, 0.95, 1);
     }
 

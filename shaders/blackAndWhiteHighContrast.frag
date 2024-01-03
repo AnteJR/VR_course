@@ -7,9 +7,9 @@ vec4 frag(vec2 pos, vec2 uv, vec4 color, sampler2D tex) {
     // contrast boost
     c.rgb = 0.5 + ((c.rgb - 0.5) * u_contrast);
 
-    if(c.x < 0.2 || c.y < 0.2 || c.z < 0.2) {
+    if(c.r <= 0.5 && c.g <= 0.5 && c.b <= 0.5) {
         return vec4(0.02, 0.02, 0.02, 1.0);
-    } else if(c.x > 0.8 || c.y > 0.8 || c.z > 0.8) {
+    } else {
         return vec4(0.98, 0.98, 0.98, 1.0);
     }
 }
